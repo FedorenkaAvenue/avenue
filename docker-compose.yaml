@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  redis:
+    restart: unless-stopped
+    volumes:
+      - ./redis/redis.conf:/app/redis.conf
+
+  server:
+    restart: unless-stoped
+    volumes:
+      - ./server:/app
