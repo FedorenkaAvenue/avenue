@@ -1,9 +1,23 @@
-build:
-	go build -o server ./src/index.go
+prep_build:
+    echo "\n Preparing installation environment...."
+    go get github.com/cespare/reflex
+
+dep_install:
+    @echo "\nInstalling dependencies...."
+    go mod download
 
 run:
-	go run ./src/index.go
+    @echo "\nRunning...."
+    go run ./src/index.go
+
+build:
+    @echo "\nBuilding...."
+    go build -o server ./src/index.go
 
 watch:
 	ulimit -n 1000
-	reflex -s -r '\.go$$' make run
+    reflex --start-service -r '\.go$$' make run
+
+install:
+    $(MAKE) prep_build
+    $(MAKE) dep_install

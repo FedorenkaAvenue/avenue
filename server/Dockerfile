@@ -1,5 +1,9 @@
-FROM golang:1.16beta1-alpine
+FROM golang:1.15.7-alpine3.13
 
 WORKDIR /app
 
-CMD [ "go", "run", "./src/index.go" ]
+COPY . .
+
+RUN make install
+
+CMD [ "make", "watch" ]
