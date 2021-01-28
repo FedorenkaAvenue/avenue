@@ -10,3 +10,9 @@ services:
   server:
     container_name: magallanes_server
     build: ./server
+
+  nginx:
+    container_name: magalannes_nginx
+    build: ./nginx
+    ports:
+      - 81:80

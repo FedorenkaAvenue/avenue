@@ -4,7 +4,7 @@
 
 ## Description
 
-Second part API server for @Apple🥧pie
+Second part API server for [@Apple🥧pie](https://github.com/FedorenkaAvenue/Apple_pie)
 
 <!-- ## Join
 
