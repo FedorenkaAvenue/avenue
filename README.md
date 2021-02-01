@@ -4,17 +4,21 @@
 
 ## Description
 
-OpenAPI server for **FedorenkaAvenue** community. Created by *Swagger*.
+OpenAPI server for **@FedorenkaAvenue** community.    
+Created by *Swagger*.    
 
 ## Join
 
  * **Apple pie🥧**: http://apple-pie.fun/docs
 
-<!-- ## Deploy🐳
+## Deploy
 
-  - `docker-compose up --build -d` to deploy and up containers
-  - `docker-compose stop` to stop containers
+  * **local**🐳
 
-## Tools🐳
+    - `docker build -t magallanes .` or `make build` to build container
+    - `docker run --name magallanes -p 911:8080 -d -v $(pwd)/docs:/usr/share/nginx/html/docs magallanes` or `make run` to run container on Your http://localhost:911
+    - `docker stop magallanes` or `make stop` to stop container
 
-  - `docker-compose logs -f` all logs -->
+  * **remote**
+
+    - push changes to git *master* branch and wait for [action](https://github.com/FedorenkaAvenue/Magallanes/actions) result
