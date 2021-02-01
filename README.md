@@ -1,6 +1,6 @@
 # Magallanes
 
-![online](https://img.shields.io/website?url=http://apple-pie.fun)
+![online](https://img.shields.io/website?url=http://apple-pie.fun/docs)
 
 ## Description
 
