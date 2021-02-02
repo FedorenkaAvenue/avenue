@@ -1,4 +1,4 @@
-name: Deploy Swagger API to test server
+name: Deploy Swagger API on remote test server
 
 on:
   push:

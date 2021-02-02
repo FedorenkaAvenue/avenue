@@ -9,3 +9,8 @@ run:
 stop:
 	@echo "Stoping container..."
 	@docker stop magallanes
+
+deploy_prod:
+	@echo "Deploying production container..."
+	@docker build -t magallanes -f Dockerfile.prod
+	$(make) run

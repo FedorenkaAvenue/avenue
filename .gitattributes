@@ -1,1 +1,4 @@
 *.yaml linguist-detectable=true
+
+Dockerfile.prod linguist-detectable=true
+Dockerfile.prod linguist-language=Dockerfile
