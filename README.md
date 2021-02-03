@@ -1,6 +1,6 @@
 # Magallanes⛵️
 
-![online](https://img.shields.io/website?url=http://apple-pie.fun/docs)
+![online](https://img.shields.io/website?url=http://docs.fedorenka.online)
 
 ## Description
 
@@ -9,7 +9,7 @@ Created by *Swagger*.
 
 ## Join
 
-  * **remote**: http://apple-pie.fun/docs
+  * **remote**: http://docs.fedorenka.online
 
   * **local🐳**: http://localhost:911
 
@@ -17,9 +17,8 @@ Created by *Swagger*.
 
   * **local**🐳
 
-    - `docker build -t magallanes .` or `make build` to build container
-    - `docker run --name magallanes -p 911:8080 -d -v $(pwd)/docs:/usr/share/nginx/html/docs magallanes` or `make run` to run container
-    - `docker stop magallanes` or `make stop` to stop container
+    - `make build` to build container
+    - `make run` to run container
 
   * **remote**
 
