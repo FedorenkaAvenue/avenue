@@ -9,3 +9,9 @@ run:
 stop:
 	@echo "Stoping container..."
 	@docker stop magallanes
+
+rebuild:
+	@echo "Rebuilding..."
+	@docker dowm magallanes -v
+	$(MAKE) build
+	$(MAKE) run
