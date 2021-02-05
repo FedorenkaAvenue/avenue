@@ -12,7 +12,7 @@ stop:
 
 rebuild:
 	@echo "Rebuilding..."
-	@docker dowm magallanes -v
+	@docker stop magallanes
+	@docker rm magallanes -v
 	$(MAKE) build
 	$(MAKE) run
-
