@@ -20,6 +20,16 @@ Created by *Swagger*.
     - `make build` to build container
     - `make run` to run container
 
-  * **remote**
+  * **remote**🌐
 
     - push changes to git *master* branch and wait for [action](https://github.com/FedorenkaAvenue/Magallanes/actions) result
+
+## Guides
+
+<details>
+    <summary>Add new OpenAPI doc📓</summary>
+    <ul>
+      <li>add new <i>Swagger</i> doc file into <b>./docs</b> folder</li>
+      <li>find <code>SwaggerUIBundle</code> initialization inside <b>./custom/index.html</b> file and add new confiduration to <code>urls</code> param</li>
+    </ul>
+</details>
