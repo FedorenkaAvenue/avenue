@@ -1,18 +1,21 @@
+IMAGE=magallanes
+CONTAINER=magallanes
+
 build:
 	@echo "Building container..."
-	@docker build -t magallanes .
+	@docker build -t ${IMAGE} .
 
 run:
 	@echo "Start running container..."
-	@docker run --name magallanes -p 911:8080 -d -v $(shell pwd)/docs:/usr/share/nginx/html/docs magallanes
+	@docker run --name ${CONTAINER} -p 911:8080 -d -v $(shell pwd)/docs:/usr/share/nginx/html/docs ${IMAGE}
 
 stop:
 	@echo "Stoping container..."
-	@docker stop magallanes
+	@docker stop ${CONTAINER}
 
 rebuild:
 	@echo "Rebuilding..."
-	@docker stop magallanes
-	@docker rm magallanes -v
+	@docker stop ${CONTAINER}
+	@docker rm ${CONTAINER} -v
 	$(MAKE) build
 	$(MAKE) run
