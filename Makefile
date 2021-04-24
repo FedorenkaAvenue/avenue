@@ -13,3 +13,10 @@ stop:
 	@echo "Stoping container..."
 	@docker stop ${CONTAINER}
 
+rebuild:
+	@echo "Rebuilding..."
+	@docker stop ${CONTAINER}
+	@docker rm ${CONTAINER} -v
+	$(MAKE) build
+	$(MAKE) run
+
