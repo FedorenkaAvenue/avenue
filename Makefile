@@ -19,4 +19,3 @@ rebuild:
 	@docker rm ${CONTAINER} -v
 	$(MAKE) build
 	$(MAKE) run
-

@@ -1,0 +1,36 @@
+---
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: '@Garage'
+  description: |
+    @Garage REST API list
+    last update: 05/13/2021 00:10
+    все API сервера начинаются с /api роута
+tags:
+- name: call_me
+  description: запросить звонок
+paths:
+  '/callme':
+    post:
+      tags:
+      - call_me
+      summary: запросить звонок
+      parameters:
+      - name: name
+        in: body
+        description: имя юзера
+        required: false
+        type: string
+      - name: phone
+        in: body
+        description: номер телефона
+        required: true
+        type: string
+      responses:
+        '200':
+          description: успешно
+        '400':
+          description: некорректное тело запроса
+        '403':
+          description: спам

@@ -2,7 +2,7 @@
 swagger: '2.0'
 info:
   version: 0.0.1
-  title: '@Beria server API doc list'
+  title: '@Beria'
   description: |
     @Apple_pie second part API
     last update: 02/02/2021 13:23

@@ -2,7 +2,7 @@
 swagger: '2.0'
 info:
   version: 0.0.1
-  title: '@Apple_pie server API doc list'
+  title: '@Apple_pie'
   description: |
     last update: 02/02/2021 09:35
     все API сервера начинаются с /api роута
