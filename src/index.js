@@ -4,7 +4,7 @@ window.addEventListener('load', getDockerStatus);
 
 async function getDockerStatus() {
     try {
-        const res = await fetch('http://185.253.219.98:1991/ps');
+        const res = await fetch('https://185.253.219.98:1991/ps');
 
         if (res.status === 406) throw Error;
 
