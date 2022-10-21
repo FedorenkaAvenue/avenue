@@ -8,5 +8,4 @@
 
 ## Docs
 
- * [Nginx конфиги](https://github.com/FedorenkaAvenue/.github-private/blob/master/test_server/nginx/conf.d/website.conf) для сайта
- * Запрашиваемый статус контейнеров отдает включенный на сервере пакет [Andy](https://github.com/bringmetheaugust/Andy) через `docker_http` сервис.
+�апрашиваемый статус контейнеров отдает включенный на сервере пакет [Andy](https://github.com/bringmetheaugust/Andy) через `docker_http` сервис.
