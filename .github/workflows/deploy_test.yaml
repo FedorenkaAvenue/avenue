@@ -39,5 +39,4 @@ jobs:
           username: "root"
           key: ${{ secrets.TEST_SERVER_SSH_KEY }}
           script: |
-            cp /home/root/avenue/src/website/. /var/www/html/
-
+            cp -r /home/root/avenue/src/website/. /var/www/html/
