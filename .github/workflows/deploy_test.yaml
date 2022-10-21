@@ -1,30 +1,41 @@
-name: Deploy Swagger API on remote test server
+name: deploy Fedorenka website
 
 on:
   push:
     branches: [master]
 
 jobs:
-  deploy:
+  prepare:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch master branch
+      - name: Fetch repository
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.TEST_SERVER_HOST }}
-          username: root
-          password: ${{ secrets.TEST_SERVER_SSH_KEY }}
+          username: "root"
+          key: ${{ secrets.TEST_SERVER_SSH_KEY }}
           script: |
-            cd /Magallanes
+            cd /home/root/Avenue || mkdir /home/root/Avenue && git clone git@github.com:FedorenkaAvenue/avenue.git
             git reset --hard HEAD
             git pull origin master
-
-      - name: Rebuild container
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Nginx conf
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.TEST_SERVER_HOST }}
-          username: root
-          password: ${{ secrets.TEST_SERVER_SSH_KEY }}
+          username: "root"
+          key: ${{ secrets.TEST_SERVER_SSH_KEY }}
           script: |
-            cd /Magallanes
-            make rebuild
+            cp /home/root/Avenue/src/nginx.conf /etc/nginx/conf.d/website.conf
+            nginx -t
+            systemctl restart nginx.service
+      - name: Move build to hosting
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{ secrets.TEST_SERVER_HOST }}
+          username: "root"
+          key: ${{ secrets.TEST_SERVER_SSH_KEY }}
+          script: |
+            cp /home/root/Avenue/src/website/. /var/www/html/
