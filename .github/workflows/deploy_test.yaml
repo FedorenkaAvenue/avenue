@@ -19,6 +19,7 @@ jobs:
             git reset --hard HEAD
             git pull origin master
   build:
+    needs: [prepare]
     runs-on: ubuntu-latest
     steps:
       - name: Update Nginx conf
