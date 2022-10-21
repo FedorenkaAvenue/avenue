@@ -15,7 +15,7 @@ jobs:
           username: "root"
           key: ${{ secrets.TEST_SERVER_SSH_KEY }}
           script: |
-            cd /home/root/Avenue || mkdir /home/root/Avenue && git clone git@github.com:FedorenkaAvenue/avenue.git
+            cd /home/root/avenue
             git reset --hard HEAD
             git pull origin master
   build:
@@ -28,7 +28,7 @@ jobs:
           username: "root"
           key: ${{ secrets.TEST_SERVER_SSH_KEY }}
           script: |
-            cp /home/root/Avenue/src/nginx.conf /etc/nginx/conf.d/website.conf
+            cp /home/root/avenue/src/nginx.conf /etc/nginx/conf.d/website.conf
             nginx -t
             systemctl restart nginx.service
       - name: Move build to hosting
@@ -38,4 +38,5 @@ jobs:
           username: "root"
           key: ${{ secrets.TEST_SERVER_SSH_KEY }}
           script: |
-            cp /home/root/Avenue/src/website/. /var/www/html/
+            cp /home/root/avenue/src/website/. /var/www/html/
+
